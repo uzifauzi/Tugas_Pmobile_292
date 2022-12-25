@@ -6,6 +6,7 @@ import androidx.room.Room;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.Toast;
 
@@ -52,5 +53,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 //        code untuk berhasil sign up
+        binding.buttonSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isAllowed){
+                    UserTable userTable = new UserTable(0,binding.nama.getText().toString(),binding.nim.getText().toString(),binding.password.getText().toString());
+                    userDao.insertUser(userTable);
+                } else {
+                    Toast.makeText(MainActivity.this,"Akun sudah terdaftar", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
