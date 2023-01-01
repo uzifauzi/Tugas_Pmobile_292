@@ -3,6 +3,7 @@ package com.company.tugas2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -62,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this,"Akun sudah terdaftar", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+//      redirect ke login page
+        binding.goToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
     }

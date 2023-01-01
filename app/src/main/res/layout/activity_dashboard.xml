@@ -7,4 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      tools:layout_editor_absoluteX="1dp"
+      tools:layout_editor_absoluteY="1dp"
+      android:layout_marginHorizontal="16px">
+
+
+    <Button
+        android:id="@+id/logOutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log Out" />
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
